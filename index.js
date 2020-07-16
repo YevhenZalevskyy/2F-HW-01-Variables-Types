@@ -19,18 +19,10 @@ const armchairRoundPrice = Math.floor(armchairPrice);
 
 const roundSumPrices = armchairRoundPrice + chairRoundPrice + sofaRoundPrice;
 const round100SumPrices = Math.round((roundSumPrices) / 100) * 100;
-console.log(Math.round((roundSumPrices) / 100) * 100);
+console.log(round100SumPrices);
 
 // Is Even Or Odd
 console.log(roundSumPrices);
-function isEven(roundSumPrices){
-    if (roundSumPrices%2 === 0)
-        console.log("even")
-    else
-        console.log("odd")
-};
-
-isEven(roundSumPrices);
 console.log(roundSumPrices%2 === 0);
 
 //500-sumPrices
@@ -43,7 +35,7 @@ console.log(midle2);
 
 //Discount
 const discount = Math.random() * 100;
-const discount2 = +discount.toFixed();
+const discount2 = parseInt(discount);
 
 //Armchair Sail
 const armchairWithDiscount = armchairRoundPrice / 100 * (100 - discount2);
