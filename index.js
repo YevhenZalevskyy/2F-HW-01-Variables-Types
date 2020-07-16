@@ -18,15 +18,17 @@ const sofaRoundPrice = Math.floor(sofaPrice);
 const armchairRoundPrice = Math.floor(armchairPrice);
 
 const roundSumPrices = armchairRoundPrice + chairRoundPrice + sofaRoundPrice;
-const round100SumPrices = Math.round((roundSumPrices) / 100) * 100;
-console.log(round100SumPrices);
+const hundredsSumPrices = Math.round((roundSumPrices) / 100) * 100;
+console.log(hundredsSumPrices);
 
 // Is Even Or Odd
 console.log(roundSumPrices);
-console.log(roundSumPrices%2 === 0);
+const even = roundSumPrices%2 === 0;
+console.log(even);
 
 //500-sumPrices
-console.log(500 - sumPrices);
+const change = 500 - sumPrices
+console.log(change);
 
 //Midle Price
 const midle = sumPrices / 3;
@@ -34,18 +36,18 @@ const midle2 = +midle.toFixed(2);
 console.log(midle2);
 
 //Discount
-const discount = Math.random() * 100;
-const discount2 = parseInt(discount);
+const discount = parseInt(Math.random() * 100);
 
 //Armchair Sail
-const armchairWithDiscount = armchairRoundPrice / 100 * (100 - discount2);
-const armchairWithDiscount2 = +armchairWithDiscount.toFixed(2);
+const armchairWithDiscount = armchairRoundPrice / 100 * (100 - discount);
+const armchairWithRoundDiscount = +armchairWithDiscount.toFixed(2);
 //To Pay
-console.log(armchairWithDiscount2);
+console.log(armchairWithRoundDiscount);
 //Profit
-const difference = armchairRoundPrice / 100 * discount2;
+const difference = armchairRoundPrice / 100 * discount;
 const profit = armchairRoundPrice / 2 - difference;
-console.log(+profit.toFixed(2));
+const roundProfit = +profit.toFixed(2);
+console.log(roundProfit);
 
 //Advanced
 const template = `Стілець коштує ${chairPrice}грн (округлюємо в меншу сторону: ${chairRoundPrice}грн)
@@ -54,11 +56,11 @@ const template = `Стілець коштує ${chairPrice}грн (округл�
 Максимальна ціна за річ це ${maxPrice}грн, а мінімальна - ${minPrice}грн
 Загальна сума цін всіх меблів: ${sumPrices}грн
 Загальна сума, округлених в меньшу сторону до цілих, цін всіх меблів: ${roundSumPrices}грн
-Сума цін всіх меблів округлена до сотень: ${round100SumPrices}грн
-Cума цін всіх меблів округлена в меншу сторону є парним числом?: ${roundSumPrices%2 === 0}грн
-Сума решти з 500грн при покупці усіх меблів: ${500 - sumPrices}грн
+Сума цін всіх меблів округлена до сотень: ${hundredsSumPrices}грн
+Cума цін всіх меблів округлена в меншу сторону є парним числом?: ${even}
+Сума решти з 500грн при покупці усіх меблів: ${change}грн
 Cереднє значення цін, округлене до другого знаку після коми: ${midle2}грн
-Знижка на крісло: ${discount2}%, до оплати: ${armchairWithDiscount2}грн
-Прибуток від цього продажу: ${+profit.toFixed(2)}грн`;
+Знижка на крісло: ${discount}%, до оплати: ${armchairWithRoundDiscount}грн
+Прибуток від цього продажу: ${roundProfit}грн`;
 
 console.log(template);
